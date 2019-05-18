@@ -22,4 +22,7 @@
         app:headerLayout="@layout/nav_header_personal_page"
         app:menu="@menu/activity_personal_page_drawer" />
 
+
+
+
 </android.support.v4.widget.DrawerLayout>
