@@ -4,22 +4,72 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Payments" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Transfert" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Saving" />
-        <item
-            android:id="@+id/nav_view"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
+
+        <item android:title="Payments">
+            <menu>
+                <item
+                    android:id="@+id/nav_history"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="History" />
+
+                <item
+                    android:id="@+id/nav_service_pay"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Service Payments" />
+            </menu>
+
+        </item>
+
+        <item android:title="Transfer">
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Transfer" />
+                <item
+                    android:id="@+id/nav_bank_transfer"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Bank Transfer" />
+            </menu>
+
+        </item>
+
+        <item android:title="Saving">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_create_saving_account"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Create Saving Account" />
+                <item
+                    android:id="@+id/nav_consult_movements"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Consult Movements" />
+                <item
+                    android:id="@+id/nav_add_money"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Add Money" />
+                <item
+                    android:id="@+id/nav_withdraw_money"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Withdraw Money" />
+            </menu>
+        </item>
+
+        <item android:title="Settings">
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Settings" />
+
+            </menu>
+
+        </item>
 
     </group>
 

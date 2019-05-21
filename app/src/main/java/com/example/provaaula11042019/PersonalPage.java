@@ -83,19 +83,25 @@ public class PersonalPage extends AppCompatActivity
 
 
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_history) {
 
             Intent intentPay = new Intent(this, PaymentPage.class);
             startActivity(intentPay);
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_service_pay) {
 
-        } else if (id == R.id.nav_slideshow) {
+            Intent intentService = new Intent(this, ServicePayments.class);
+            startActivity(intentService);
 
-        } else if (id == R.id.nav_view) {
+        } else if (id == R.id.nav_create_saving_account) {
+
+            Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
+            startActivity(intentSaving);
+
+        } else if (id == R.id.nav_settings) {
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

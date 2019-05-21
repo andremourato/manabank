@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".CreateSeavingAccounts"
+            android:label="@string/title_activity_create_seaving_accounts"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
+            android:name=".ServicePayments"
+            android:label="@string/title_activity_service_payments"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
             android:name=".PaymentPage"
             android:label="@string/title_activity_payment_page"
             android:parentActivityName=".PersonalPage"
