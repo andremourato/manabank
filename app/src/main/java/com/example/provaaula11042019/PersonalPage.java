@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class PersonalPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private int ammountOfTotalMoney;
+    private double ammountOfTotalMoney;
     TextView text ;
 
     @Override
@@ -30,7 +30,7 @@ public class PersonalPage extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         text = (TextView) findViewById(R.id.textView2);
-        ammountOfTotalMoney = 553;
+        ammountOfTotalMoney = 4306.98;
         text.setText(ammountOfTotalMoney+"€");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

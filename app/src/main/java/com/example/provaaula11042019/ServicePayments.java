@@ -14,9 +14,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class ServicePayments extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+     EditText editEntity;
+     EditText editReference;
+     EditText editAmountBills;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,43 @@ public class ServicePayments extends AppCompatActivity
         setContentView(R.layout.activity_service_payments);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        editEntity  = (EditText)findViewById(R.id.editText4) ;
+        editReference = (EditText)findViewById(R.id.editText5);
+        editAmountBills = (EditText)findViewById(R.id.editText6) ;
+
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                editEntity.setText("111111111111111111");
+                editReference.setText("45496666565946");
+
+            }
+        });
+
+        FloatingActionButton fab2 = findViewById(R.id.floatingActionButton2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                editEntity.setText("222222222222222");
+                editReference.setText("453453453453");
+
+            }
+        });
+
+        FloatingActionButton fab3 = findViewById(R.id.floatingActionButton3);
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                editEntity.setText("33333333333333333");
+                editReference.setText("979797979797");
+
+            }
+        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -64,6 +107,15 @@ public class ServicePayments extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void onPayBills(View view){
+        Toast.makeText(this,"Bills payed ",Toast.LENGTH_LONG).show();
+        editAmountBills.setText("");
+        editEntity.setText("");
+        editReference.setText("");
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
