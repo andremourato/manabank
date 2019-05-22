@@ -77,7 +77,7 @@ public class PersonalPage extends AppCompatActivity
         int id = item.getItemId();
         if (id == R.id.nav_history) {
 
-            Intent intentPay = new Intent(this, PaymentPage.class);
+            Intent intentPay = new Intent(this, PaymentHistory.class);
             startActivity(intentPay);
 
         } else if (id == R.id.nav_service_pay) {
@@ -90,7 +90,11 @@ public class PersonalPage extends AppCompatActivity
             Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
             startActivity(intentSaving);
 
-        } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_home) {
+
+
+         //   Intent intentHome = new Intent(this, PersonalPage.class);
+         //   startActivity(intentHome);
 
         }
 

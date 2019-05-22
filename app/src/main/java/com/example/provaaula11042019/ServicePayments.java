@@ -74,13 +74,13 @@ public class ServicePayments extends AppCompatActivity
 
         if (id == R.id.nav_history) {
 
-            Intent intentPay = new Intent(this, PaymentPage.class);
+            Intent intentPay = new Intent(this, PaymentHistory.class);
             startActivity(intentPay);
 
         } else if (id == R.id.nav_service_pay) {
 
-            Intent intentService = new Intent(this, ServicePayments.class);
-            startActivity(intentService);
+         //   Intent intentService = new Intent(this, ServicePayments.class);
+         //   startActivity(intentService);
 
         } else if (id == R.id.nav_create_saving_account) {
 
@@ -88,8 +88,11 @@ public class ServicePayments extends AppCompatActivity
             Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
             startActivity(intentSaving);
 
-        } else if (id == R.id.nav_settings) {
+        }  else if (id == R.id.nav_home) {
 
+
+            Intent intentHome = new Intent(this, PersonalPage.class);
+            startActivity(intentHome);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

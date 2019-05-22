@@ -8,6 +8,10 @@
         <item android:title="Payments">
             <menu>
                 <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Home" />
+                <item
                     android:id="@+id/nav_history"
                     android:icon="@drawable/ic_menu_camera"
                     android:title="History" />

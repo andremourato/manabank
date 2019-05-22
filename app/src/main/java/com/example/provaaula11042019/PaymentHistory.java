@@ -1,5 +1,6 @@
 package com.example.provaaula11042019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -23,14 +24,7 @@ public class PaymentHistory extends AppCompatActivity
         setContentView(R.layout.activity_payment_history);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -78,22 +72,32 @@ public class PaymentHistory extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_history) {
 
-        } else if (id == R.id.nav_slideshow) {
+            //   Intent intentPay = new Intent(this, PaymentHistory.class);
+            //   startActivity(intentPay);
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_service_pay) {
 
-        } else if (id == R.id.nav_share) {
+            Intent intentService = new Intent(this, ServicePayments.class);
+            startActivity(intentService);
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_create_saving_account) {
 
+
+            Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
+            startActivity(intentSaving);
+
+        } else if (id == R.id.nav_home) {
+
+
+            Intent intentHome = new Intent(this, PersonalPage.class);
+            startActivity(intentHome);
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+
     }
 }
