@@ -2,9 +2,7 @@ package com.example.provaaula11042019;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.util.Log;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -14,6 +12,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+import java.util.Scanner;
 
 public class PaymentHistory extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +34,38 @@ public class PaymentHistory extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        /*
+         * Payment Date | Description | Amount | Available Balance
+         */
+        try {
+            Scanner sc = new Scanner(getAssets().open("payment_history.csv"));
+            while(sc.hasNextLine()){
+                String[] line = sc.nextLine().split(";");
+                addEntryToMovementHistoryTable(line[0],line[1],line[2],line[3]);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addEntryToMovementHistoryTable(String date, String description, String amount, String avail_balance){
+        TableLayout table = (TableLayout)findViewById(R.id.history_table);
+        TableRow row=new TableRow(this);
+        TextView tv1=new TextView(this);
+        tv1.setText(date+"\t");
+        TextView tv2=new TextView(this);
+        tv2.setText("\t"+description+"\t");
+        TextView tv3=new TextView(this);
+        tv3.setText("\t"+amount+"\t");
+        TextView tv4=new TextView(this);
+        tv4.setText("\t"+avail_balance);
+        row.addView(tv1);
+        row.addView(tv2);
+        row.addView(tv3);
+        row.addView(tv4);
+        table.addView(row);
+        Log.i("myapp","Added row!");
     }
 
     @Override
