@@ -14,9 +14,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class CreateSeavingAccounts extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    EditText ammountOfMoney;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,9 @@ public class CreateSeavingAccounts extends AppCompatActivity
         setContentView(R.layout.activity_create_seaving_accounts);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ammountOfMoney = (EditText) findViewById(R.id.editText3);
+       // ammountOfMoney.setText(0);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -64,6 +73,12 @@ public class CreateSeavingAccounts extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void onClickAmmount(View view){
+        Toast.makeText(this,"Saving bank created",Toast.LENGTH_LONG).show();
+        ammountOfMoney.setText("");
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

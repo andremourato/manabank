@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">provaAula11042019</string>
+    <string name="app_name">ManBank</string>
     <string name="login">Login</string>
     <string name="title_activity_personal_page">PersonalPage</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

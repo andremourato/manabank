@@ -13,9 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class PersonalPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private int ammountOfTotalMoney;
+    TextView text ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,9 @@ public class PersonalPage extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        text = (TextView) findViewById(R.id.textView2);
+        ammountOfTotalMoney = 553;
+        text.setText(ammountOfTotalMoney+"€");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
