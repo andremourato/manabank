@@ -38,6 +38,7 @@ public class PaymentHistory extends AppCompatActivity
         /*
          * Payment Date | Description | Amount | Available Balance
          */
+        addEntryToMovementHistoryTable("Payment Date","Description", "Amount", "Balance");
         try {
             Scanner sc = new Scanner(getAssets().open("payment_history.csv"));
             while(sc.hasNextLine()){

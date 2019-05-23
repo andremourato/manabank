@@ -7,6 +7,7 @@
     tools:context=".PersonalPage">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -14,14 +15,24 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="178dp"
+            android:background="@drawable/business_bg_photo"
+            android:elevation="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_personal_page" />
+    <include
+        layout="@layout/content_personal_page" />
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:elevation="100dp"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="start|bottom"
+        app:srcCompat="@drawable/business_man_face_round" />
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -9,16 +9,16 @@
             <menu>
                 <item
                     android:id="@+id/nav_home"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/home_icon"
                     android:title="Home" />
                 <item
                     android:id="@+id/nav_history"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="History" />
+                    android:icon="@drawable/history_icon"
+                    android:title="Account Movement" />
 
                 <item
                     android:id="@+id/nav_service_pay"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/payment_icon"
                     android:title="Service Payments" />
             </menu>
 
@@ -30,11 +30,11 @@
 
                 <item
                     android:id="@+id/nav_gallery"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/transfer_icon"
                     android:title="Transfer" />
                 <item
                     android:id="@+id/nav_bank_transfer"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/bank_transfer_icon"
                     android:title="Bank Transfer" />
             </menu>
 
@@ -45,19 +45,19 @@
             <menu>
                 <item
                     android:id="@+id/nav_create_saving_account"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/savings_icon"
                     android:title="Create Saving Account" />
                 <item
                     android:id="@+id/nav_consult_movements"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/movements_icon"
                     android:title="Consult Movements" />
                 <item
                     android:id="@+id/nav_add_money"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/add_money_icon"
                     android:title="Add Money" />
                 <item
                     android:id="@+id/nav_withdraw_money"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/withdraw_money_icon"
                     android:title="Withdraw Money" />
             </menu>
         </item>
