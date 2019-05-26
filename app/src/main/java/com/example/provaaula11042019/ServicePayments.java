@@ -109,6 +109,9 @@ public class ServicePayments extends AppCompatActivity
         editEntity.setText("");
         editReference.setText("");
 
+        Intent intentHome = new Intent(this, PersonalPage.class);
+        startActivity(intentHome);
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
