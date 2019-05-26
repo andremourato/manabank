@@ -94,7 +94,7 @@ public class PaymentHistory extends AppCompatActivity
             Scanner sc = new Scanner(getAssets().open("payment_history.csv"));
             while(sc.hasNextLine()){
                 String[] line = sc.nextLine().split(";");
-                addEntryToMovementHistoryTable(line[0],line[1],line[2].replace(",","."),line[3]);
+                addEntryToMovementHistoryTable(line[0],line[1],line[2].replace(",","."),line[3].replace(",","."));
             }
         } catch (Exception e) {
             e.printStackTrace();

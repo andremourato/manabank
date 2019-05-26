@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,13 +17,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = (Button)findViewById(R.id.buttonLog);
-        final Intent intent = new Intent(this, PersonalPage.class);
+        final Intent mainPage = new Intent(this, PersonalPage.class);
+        final Intent managerPage = new Intent(this, ManagerPage.class);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(intent);
+                EditText editText = (EditText) findViewById(R.id.editText2);
+                String content = editText.getText().toString();
+                if(content.equals("manager")) {
+                    startActivity(managerPage);
+                }
+                else
+                    startActivity(mainPage);
             }
         });
     }

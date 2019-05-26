@@ -4,35 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PersonalPage">
+    tools:context=".ManagerPage">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="178dp"
-            android:background="@drawable/personal_page_background"
-            android:elevation="0dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="149dp"
+            android:background="@drawable/business_bg_photo"
+            android:minHeight="100dp"
+            app:popupTheme="@style/PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
     <include
-        layout="@layout/content_personal_page" />
+        android:id="@+id/include2"
+        layout="@layout/content_manager_page" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="115dp"
+        android:id="@+id/imageView4"
+        android:layout_width="150dp"
+        android:layout_height="122dp"
         android:elevation="100dp"
-        app:layout_anchor="@+id/appBarLayout"
-        app:layout_anchorGravity="start|bottom"
-        app:srcCompat="@drawable/personal_page_person_photo" />
-
+        app:layout_anchor="@+id/include2"
+        app:layout_anchorGravity="top|center"
+        app:srcCompat="@drawable/business_man_face_round" />
 
 </android.support.design.widget.CoordinatorLayout>
