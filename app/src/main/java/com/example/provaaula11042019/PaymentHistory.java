@@ -1,10 +1,14 @@
 package com.example.provaaula11042019;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +19,11 @@ import android.view.Menu;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import java.util.Scanner;
+
 
 public class PaymentHistory extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,15 +43,58 @@ public class PaymentHistory extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*
-         * Payment Date | Description | Amount | Available Balance
-         */
-        addEntryToMovementHistoryTable("Payment Date","Description", "Amount", "Balance");
+        /* Payment Date | Description | Amount | Available Balance */
+        //Adds the headers
+        TableLayout table = (TableLayout)findViewById(R.id.history_table);
+        TableRow row=new TableRow(this);
+        TextView tv1=new TextView(this);
+        TextView tv2=new TextView(this);
+        TextView tv3=new TextView(this);
+        TextView arrows = new TextView(this);
+        TextView tv4=new TextView(this);
+        //Sets the format
+        //TV1
+        tv1.setText("Payment Date");
+        tv1.setTextColor(Color.BLACK);
+        tv1.setTextSize(17);
+        tv1.setTypeface(null, Typeface.BOLD);
+        tv1.setGravity(Gravity.CENTER);
+        //TV2
+        tv2.setText("Description");
+        tv2.setGravity(Gravity.CENTER);
+        tv2.setTextColor(Color.BLACK);
+        tv2.setTextSize(17);
+        tv2.setTypeface(null, Typeface.BOLD);
+        //TV3
+        tv3.setText("Amount");
+        tv3.setGravity(Gravity.RIGHT);
+        tv3.setTextColor(Color.BLACK);
+        tv3.setTextSize(17);
+        tv3.setTypeface(null, Typeface.BOLD);
+        //ARROWS
+        //arrows.setText(" ");
+        //arrows.setGravity(Gravity.CENTER);
+        //arrows.setTextColor(Color.BLACK);
+        //arrows.setTextSize(20);
+        //TV4
+        tv4.setText("Balance");
+        tv4.setGravity(Gravity.CENTER);
+        tv4.setTextColor(Color.BLACK);
+        tv4.setTextSize(17);
+        tv4.setTypeface(null, Typeface.BOLD);
+        //Adds to view
+        row.addView(tv1);
+        row.addView(tv2);
+        row.addView(tv3);
+        row.addView(arrows);
+        row.addView(tv4);
+        table.addView(row);
+
         try {
             Scanner sc = new Scanner(getAssets().open("payment_history.csv"));
             while(sc.hasNextLine()){
                 String[] line = sc.nextLine().split(";");
-                addEntryToMovementHistoryTable(line[0],line[1],line[2],line[3]);
+                addEntryToMovementHistoryTable(line[0],line[1],line[2].replace(",","."),line[3]);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,19 +105,36 @@ public class PaymentHistory extends AppCompatActivity
         TableLayout table = (TableLayout)findViewById(R.id.history_table);
         TableRow row=new TableRow(this);
         TextView tv1=new TextView(this);
-        tv1.setText(date+"\t");
         TextView tv2=new TextView(this);
-        tv2.setText("\t"+description+"\t");
         TextView tv3=new TextView(this);
-        tv3.setText("\t"+amount+"\t");
+        TextView arrows = new TextView(this);
         TextView tv4=new TextView(this);
-        tv4.setText("\t"+avail_balance);
+        //Sets the format
+        tv1.setText(String.format("%10s",date));
+        tv2.setText(String.format("%-19s",description));
+        tv3.setText(String.format("%10s",amount));
+        if(Double.parseDouble(amount)>=0){
+            arrows.setText("▲");
+            arrows.setTextColor(Color.GREEN);
+        }else{
+            arrows.setText("▼");
+            arrows.setTextColor(Color.RED);
+        }
+        arrows.setTextSize(20);
+        arrows.setTypeface(null, Typeface.BOLD);
+        tv4.setText(String.format("%10s",avail_balance));
+        tv1.setGravity(Gravity.CENTER);
+        tv2.setGravity(Gravity.RIGHT);
+        tv3.setGravity(Gravity.RIGHT);
+        arrows.setGravity(Gravity.LEFT);
+        tv4.setGravity(Gravity.RIGHT);
+        //Adds to view
         row.addView(tv1);
         row.addView(tv2);
         row.addView(tv3);
+        row.addView(arrows);
         row.addView(tv4);
         table.addView(row);
-        Log.i("myapp","Added row!");
     }
 
     @Override

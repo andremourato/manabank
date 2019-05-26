@@ -15,29 +15,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TableLayout
                 android:id="@+id/history_table"
-                android:layout_width="395dp"
-                android:layout_height="659dp">
+                android:layout_width="match_parent"
+                android:layout_height="1734dp"
+                android:baselineAligned="false" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </TableLayout>
         </LinearLayout>
     </ScrollView>
 
