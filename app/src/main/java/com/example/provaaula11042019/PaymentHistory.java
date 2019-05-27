@@ -190,6 +190,11 @@ public class PaymentHistory extends AppCompatActivity
 
             Intent intentHome = new Intent(this, PersonalPage.class);
             startActivity(intentHome);
+        }else if(id == R.id.nav_transfer){
+
+            Intent intentTrans = new Intent(this, TransfertPage.class);
+            startActivity(intentTrans);
+
         }
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);

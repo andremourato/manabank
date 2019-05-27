@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.provaaula11042019">
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TransfertPage"
+            android:label="@string/title_activity_transfert_page"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
+            android:name=".ServiceBillsSettings"
+            android:label="@string/title_activity_service_bills_settings"
+            android:parentActivityName=".ServicePayments"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.ServicePayments" />
+        </activity>
+        <activity
             android:name=".ManagerPage"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PaymentHistory"
             android:label="Payment History"

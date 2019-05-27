@@ -5,49 +5,46 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.MenuItem;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
-public class PersonalPage extends AppCompatActivity
+public class TransfertPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private double ammountOfTotalMoney;
-    TextView text ;
+    EditText editName;
+    EditText editMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_transfert_page);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        text = (TextView) findViewById(R.id.textView2);
-        ammountOfTotalMoney = 4306.98;
-        text.setText(ammountOfTotalMoney+"€");
+        editMoney = (EditText)findViewById(R.id.editText8) ;
+        editName = (EditText)findViewById(R.id.editText7);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -57,6 +54,8 @@ public class PersonalPage extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.transfert_page, menu);
         return true;
     }
 
@@ -67,16 +66,32 @@ public class PersonalPage extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onSendMoney(View view){
+        Toast.makeText(this,"Money sent ",Toast.LENGTH_LONG).show();
+
+        editName.setText("");
+        editMoney.setText("");
+        Intent intentHome = new Intent(this, PersonalPage.class);
+        startActivity(intentHome);
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-
-
         int id = item.getItemId();
+
+
+
         if (id == R.id.nav_history) {
 
             Intent intentPay = new Intent(this, PaymentHistory.class);
@@ -84,29 +99,28 @@ public class PersonalPage extends AppCompatActivity
 
         } else if (id == R.id.nav_service_pay) {
 
-            Intent intentService = new Intent(this, ServicePayments.class);
-            startActivity(intentService);
+               Intent intentService = new Intent(this, ServicePayments.class);
+               startActivity(intentService);
 
         } else if (id == R.id.nav_create_saving_account) {
+
 
             Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
             startActivity(intentSaving);
 
-        } else if (id == R.id.nav_home) {
+        }  else if (id == R.id.nav_home) {
 
 
-         //   Intent intentHome = new Intent(this, PersonalPage.class);
-         //   startActivity(intentHome);
-
+            Intent intentHome = new Intent(this, PersonalPage.class);
+            startActivity(intentHome);
         }else if(id == R.id.nav_transfer){
 
-            Intent intentTrans = new Intent(this, TransfertPage.class);
-            startActivity(intentTrans);
+          //  Intent intentTrans = new Intent(this, TransfertPage.class);
+          //  startActivity(intentTrans);
 
         }
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

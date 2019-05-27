@@ -20,4 +20,6 @@
     <string name="title_activity_create_seaving_accounts">CreateSeavingAccounts</string>
     <string name="title_activity_payment_history">PaymentHistory</string>
     <string name="title_activity_manager_page">ManagerPage</string>
+    <string name="title_activity_service_bills_settings">ServiceBillsSettings</string>
+    <string name="title_activity_transfert_page">TransfertPage</string>
 </resources>
