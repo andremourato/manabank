@@ -114,7 +114,7 @@
         </activity>
         <activity
             android:name=".PaymentPage"
-            android:label="Payment Page"
+            android:label="Payment "
             android:parentActivityName=".PersonalPage"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

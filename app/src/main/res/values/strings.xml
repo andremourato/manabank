@@ -110,13 +110,13 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="title_activity_manager_employee_list">ManagerEmployeeList</string>
+    <string name="title_activity_manager_employee_list">Manager Employee List</string>
     <string name="title_activity_service_bills_settings">Service Bills Settings</string>
     <string name="title_activity_transfert_page">Transfert Page</string>
     <string name="title_activity_add_money_saving_account">Add Money Saving Account</string>
-    <string name="title_activity_withdraw_money_saving_account">WithdrawMoneySavingAccount</string>
-    <string name="title_activity_cliente_of_manager_page">ClienteOfManagerPage</string>
-    <string name="title_activity_list_of_company_page">ListOfCompanyPage</string>
     <string name="title_activity_manager_employee_page">ManagerEmployeePage</string>
     <string name="title_activity_manager_companies_list">ManagerCompaniesList</string>
+    <string name="title_activity_withdraw_money_saving_account">Withdraw Money</string>
+    <string name="title_activity_cliente_of_manager_page">Client</string>
+    <string name="title_activity_list_of_company_page">Company List</string>
 </resources>
