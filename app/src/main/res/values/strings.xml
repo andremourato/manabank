@@ -117,4 +117,6 @@
     <string name="title_activity_withdraw_money_saving_account">WithdrawMoneySavingAccount</string>
     <string name="title_activity_cliente_of_manager_page">ClienteOfManagerPage</string>
     <string name="title_activity_list_of_company_page">ListOfCompanyPage</string>
+    <string name="title_activity_manager_employee_page">ManagerEmployeePage</string>
+    <string name="title_activity_manager_companies_list">ManagerCompaniesList</string>
 </resources>

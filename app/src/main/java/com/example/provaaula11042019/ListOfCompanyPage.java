@@ -78,8 +78,8 @@ public class ListOfCompanyPage extends AppCompatActivity
             Intent intentClientList = new Intent(this,ManagerClientList.class);
             startActivity(intentClientList);
         } else if (id == R.id.nav_employee_list) {
-            Intent intentEmployeeList = new Intent(this,ManagerEmployeeList.class);
-            startActivity(intentEmployeeList);
+            //Intent intentEmployeeList = new Intent(this,ManagerEmployeeList.class);
+            //startActivity(intentEmployeeList);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

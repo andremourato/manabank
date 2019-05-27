@@ -173,7 +173,7 @@ public class ManagerPage extends AppCompatActivity
             Intent intentClientList = new Intent(this,ManagerClientList.class);
             startActivity(intentClientList);
         } else if (id == R.id.nav_employee_list) {
-            Intent intentEmployeeList = new Intent(this,ManagerEmployeeList.class);
+            Intent intentEmployeeList = new Intent(this,ManagerEmployeePage.class);
             startActivity(intentEmployeeList);
         }
 
