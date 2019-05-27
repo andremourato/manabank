@@ -145,6 +145,12 @@ public class AddMoneySavingAccount extends AppCompatActivity
 
 
 
+        }else if(id == R.id.nav_withdraw_money){
+
+            Intent intentWith = new Intent(this, WithdrawMoneySavingAccount.class);
+            startActivity(intentWith);
+
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

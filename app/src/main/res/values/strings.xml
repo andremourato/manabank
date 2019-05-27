@@ -23,4 +23,5 @@
     <string name="title_activity_service_bills_settings">Service Bills Settings</string>
     <string name="title_activity_transfert_page">Transfert Page</string>
     <string name="title_activity_add_money_saving_account">Add Money Saving Account</string>
+    <string name="title_activity_withdraw_money_saving_account">WithdrawMoneySavingAccount</string>
 </resources>

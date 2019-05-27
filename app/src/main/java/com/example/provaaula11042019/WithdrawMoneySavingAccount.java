@@ -5,49 +5,68 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.MenuItem;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-public class PersonalPage extends AppCompatActivity
+import java.util.ArrayList;
+import java.util.List;
+
+public class WithdrawMoneySavingAccount extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private double ammountOfTotalMoney;
-    TextView text ;
+    EditText editAmoun;
+    Spinner spinnerId2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_withdraw_money_saving_account);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        text = (TextView) findViewById(R.id.textView2);
-        ammountOfTotalMoney = 4306.98;
-        text.setText(ammountOfTotalMoney+"€");
+        addItemsOnSpinner2();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        editAmoun = (EditText)findViewById(R.id.editText19);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+
+    public void addItemsOnSpinner2() {
+
+        spinnerId2 = (Spinner) findViewById(R.id.spinner2);
+        List<String> list2 = new ArrayList<String>();
+        list2.add("Account");
+        list2.add("60 Days - 120€");
+        list2.add("90 Days - 300€");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list2);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerId2.setAdapter(dataAdapter);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -57,7 +76,23 @@ public class PersonalPage extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_personal_page_drawer, menu);
         return true;
+    }
+
+
+    public void onWithdraw(View view){
+
+        Intent intentHome = new Intent(this, PersonalPage.class);
+
+        Toast.makeText(this,"Money withdrow sent ",Toast.LENGTH_LONG).show();
+        editAmoun.setText("");
+        //  editId.setText("");
+
+        startActivity(intentHome);
+
+
     }
 
     @Override
@@ -67,6 +102,11 @@ public class PersonalPage extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -74,9 +114,9 @@ public class PersonalPage extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-
-
         int id = item.getItemId();
+
+
         if (id == R.id.nav_history) {
 
             Intent intentPay = new Intent(this, PaymentHistory.class);
@@ -89,15 +129,15 @@ public class PersonalPage extends AppCompatActivity
 
         } else if (id == R.id.nav_create_saving_account) {
 
+
             Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
             startActivity(intentSaving);
 
-        } else if (id == R.id.nav_home) {
+        }  else if (id == R.id.nav_home) {
 
 
-         //   Intent intentHome = new Intent(this, PersonalPage.class);
-         //   startActivity(intentHome);
-
+            Intent intentHome = new Intent(this, PersonalPage.class);
+            startActivity(intentHome);
         }else if(id == R.id.nav_transfer){
 
             Intent intentTrans = new Intent(this, TransfertPage.class);
@@ -110,14 +150,13 @@ public class PersonalPage extends AppCompatActivity
 
         }else if(id == R.id.nav_withdraw_money){
 
-            Intent intentWith = new Intent(this, WithdrawMoneySavingAccount.class);
-            startActivity(intentWith);
+        //    Intent intentWith = new Intent(this, WithdrawMoneySavingAccount.class);
+        //    startActivity(intentWith);
 
 
         }
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

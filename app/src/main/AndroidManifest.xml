@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".WithdrawMoneySavingAccount"
+            android:label="@string/title_activity_withdraw_money_saving_account"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
             android:name=".AddMoneySavingAccount"
             android:label="@string/title_activity_add_money_saving_account"
             android:parentActivityName=".PersonalPage"
