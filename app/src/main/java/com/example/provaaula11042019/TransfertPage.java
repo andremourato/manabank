@@ -55,7 +55,7 @@ public class TransfertPage extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.transfert_page, menu);
+        getMenuInflater().inflate(R.menu.activity_personal_page_drawer, menu);
         return true;
     }
 
@@ -117,6 +117,11 @@ public class TransfertPage extends AppCompatActivity
 
           //  Intent intentTrans = new Intent(this, TransfertPage.class);
           //  startActivity(intentTrans);
+
+        }else if(id == R.id.nav_add_money){
+
+            Intent intentAdd = new Intent(this, AddMoneySavingAccount.class);
+            startActivity(intentAdd);
 
         }
 

@@ -44,10 +44,7 @@
                     android:id="@+id/nav_create_saving_account"
                     android:icon="@drawable/savings_icon"
                     android:title="Create Saving Account" />
-                <item
-                    android:id="@+id/nav_consult_movements"
-                    android:icon="@drawable/movements_icon"
-                    android:title="Consult Movements" />
+              
                 <item
                     android:id="@+id/nav_add_money"
                     android:icon="@drawable/add_money_icon"
