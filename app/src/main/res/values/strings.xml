@@ -16,9 +16,9 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="title_activity_service_payments">ServicePayments</string>
-    <string name="title_activity_create_seaving_accounts">CreateSeavingAccounts</string>
-    <string name="title_activity_payment_history">PaymentHistory</string>
+    <string name="title_activity_service_payments">Service Payments</string>
+    <string name="title_activity_create_seaving_accounts">Create Seaving Accounts</string>
+    <string name="title_activity_payment_history">Payment History</string>
     <string name="title_activity_manager_page">ManagerPage</string>
     <string name="title_activity_manager_client_list">ManagerClientList</string>
     <string name="large_text">
@@ -111,4 +111,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_manager_employee_list">ManagerEmployeeList</string>
+    <string name="title_activity_service_bills_settings">Service Bills Settings</string>
+    <string name="title_activity_transfert_page">Transfert Page</string>
+    <string name="title_activity_add_money_saving_account">Add Money Saving Account</string>
+    <string name="title_activity_withdraw_money_saving_account">WithdrawMoneySavingAccount</string>
 </resources>

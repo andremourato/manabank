@@ -24,6 +24,15 @@ public class ServicePayments extends AppCompatActivity
      EditText editReference;
      EditText editAmountBills;
 
+     int waterEntity ;
+     int waterRef ;
+     int gasEntity ;
+     int gasRef ;
+     int eleEntity ;
+     int eleRef ;
+
+    // int varia  ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +44,49 @@ public class ServicePayments extends AppCompatActivity
         editReference = (EditText)findViewById(R.id.editText5);
         editAmountBills = (EditText)findViewById(R.id.editText6) ;
 
+        final Intent settings = new Intent(this,ServiceBillsSettings.class);
+
+       // varia = 0;
+
+
+       // Intent intentttt = getIntent();
+      //  varia =Integer.getInteger(intentttt.getStringExtra("var"));
+
+      //  if(varia==0){
+
+            waterEntity=59595595;
+            waterRef = 544916198;
+            gasRef= 232323232;
+            gasEntity = 77788888;
+            eleEntity = 79494944;
+            eleRef = 89898989;
+
+
+      /*  }else if(varia == 1){
+
+            eleRef= intentttt.getIntExtra("ref",eleRef);
+            eleEntity = intentttt.getIntExtra("ent",eleEntity);
+
+        }else if(varia == 2){
+
+            gasRef= intentttt.getIntExtra("ref",gasRef);
+            gasEntity = intentttt.getIntExtra("ent",gasEntity);
+
+
+        }else if(varia == 3){
+
+            waterRef= intentttt.getIntExtra("ref",waterRef);
+            waterEntity = intentttt.getIntExtra("ent",waterEntity);
+
+        }
+*/
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                editEntity.setText("111111111111111111");
-                editReference.setText("45496666565946");
+                editEntity.setText(String.valueOf(gasEntity));
+                editReference.setText(String.valueOf(gasRef));
 
             }
         });
@@ -51,8 +96,8 @@ public class ServicePayments extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                editEntity.setText("222222222222222");
-                editReference.setText("453453453453");
+                editEntity.setText(String.valueOf(eleEntity));
+                editReference.setText(String.valueOf(eleRef));
 
             }
         });
@@ -62,8 +107,21 @@ public class ServicePayments extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                editEntity.setText("33333333333333333");
-                editReference.setText("979797979797");
+                editEntity.setText(String.valueOf(waterEntity));
+                editReference.setText(String.valueOf(waterRef));
+
+            }
+        });
+
+
+
+        FloatingActionButton fab4 = findViewById(R.id.floatingActionButton4);
+        fab4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                startActivity(settings);
 
             }
         });
@@ -141,6 +199,22 @@ public class ServicePayments extends AppCompatActivity
 
             Intent intentHome = new Intent(this, PersonalPage.class);
             startActivity(intentHome);
+        }else if(id == R.id.nav_transfer){
+
+            Intent intentTrans = new Intent(this, TransfertPage.class);
+            startActivity(intentTrans);
+
+        }else if(id == R.id.nav_add_money){
+
+            Intent intentAdd = new Intent(this, AddMoneySavingAccount.class);
+            startActivity(intentAdd);
+
+        }else if(id == R.id.nav_withdraw_money){
+
+            Intent intentWith = new Intent(this, WithdrawMoneySavingAccount.class);
+            startActivity(intentWith);
+
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

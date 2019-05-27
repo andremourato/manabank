@@ -87,6 +87,22 @@ public class PaymentPage extends AppCompatActivity
             Intent intentHome = new Intent(this, PersonalPage.class);
             startActivity(intentHome);
 
+        }else if(id == R.id.nav_transfer){
+
+            Intent intentTrans = new Intent(this, TransfertPage.class);
+            startActivity(intentTrans);
+
+        }else if(id == R.id.nav_add_money){
+
+            Intent intentAdd = new Intent(this, AddMoneySavingAccount.class);
+            startActivity(intentAdd);
+
+        }else if(id == R.id.nav_withdraw_money){
+
+            Intent intentWith = new Intent(this, WithdrawMoneySavingAccount.class);
+            startActivity(intentWith);
+
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

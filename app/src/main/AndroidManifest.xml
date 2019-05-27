@@ -34,7 +34,42 @@
             android:label=""
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
+        <activity
+            android:name=".WithdrawMoneySavingAccount"
+            android:label="@string/title_activity_withdraw_money_saving_account"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
+            android:name=".AddMoneySavingAccount"
+            android:label="@string/title_activity_add_money_saving_account"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
+            android:name=".TransfertPage"
+            android:label="@string/title_activity_transfert_page"
+            android:parentActivityName=".PersonalPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.PersonalPage" />
+        </activity>
+        <activity
+            android:name=".ServiceBillsSettings"
+            android:label="@string/title_activity_service_bills_settings"
+            android:parentActivityName=".ServicePayments"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.ServicePayments" />
+        </activity>
         <activity
             android:name=".PaymentHistory"
             android:label="Payment History"
