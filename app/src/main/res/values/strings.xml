@@ -115,4 +115,6 @@
     <string name="title_activity_transfert_page">Transfert Page</string>
     <string name="title_activity_add_money_saving_account">Add Money Saving Account</string>
     <string name="title_activity_withdraw_money_saving_account">WithdrawMoneySavingAccount</string>
+    <string name="title_activity_cliente_of_manager_page">ClienteOfManagerPage</string>
+    <string name="title_activity_list_of_company_page">ListOfCompanyPage</string>
 </resources>

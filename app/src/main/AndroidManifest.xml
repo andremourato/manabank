@@ -14,19 +14,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ListOfCompanyPage"
+            android:label="@string/title_activity_list_of_company_page"
+            android:parentActivityName=".ClienteOfManagerPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.ClienteOfManagerPage" />
+        </activity>
+        <activity
+            android:name=".ClienteOfManagerPage"
+            android:label="@string/title_activity_cliente_of_manager_page"
+            android:parentActivityName=".ManagerPage"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.provaaula11042019.ManagerPage" />
+        </activity>
+        <activity
             android:name=".ManagerEmployeeList"
             android:label="Employee List"
-            android:theme="@style/NoActionBar">
-        </activity>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ManagerClientList"
             android:label="Client List"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ManagerPage"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WithdrawMoneySavingAccount"
             android:label="@string/title_activity_withdraw_money_saving_account"
@@ -98,7 +114,6 @@
             android:name=".PersonalPage"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

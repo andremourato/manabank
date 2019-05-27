@@ -14,25 +14,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-public class CreateSeavingAccounts extends AppCompatActivity
+public class ClienteOfManagerPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    EditText ammountOfMoney;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_seaving_accounts);
+        setContentView(R.layout.activity_cliente_of_manager_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ammountOfMoney = (EditText) findViewById(R.id.editText3);
-       // ammountOfMoney.setText(0);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -53,8 +46,18 @@ public class CreateSeavingAccounts extends AppCompatActivity
         }
     }
 
+    public void onSuggestInvest(View view){
+
+        Intent listIntent = new Intent(this,ListOfCompanyPage.class);
+        startActivity(listIntent);
+
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_manager_page_drawer, menu);
         return true;
     }
 
@@ -65,15 +68,9 @@ public class CreateSeavingAccounts extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
+
         return super.onOptionsItemSelected(item);
-    }
-
-
-    public void onClickAmmount(View view){
-        Toast.makeText(this,"Saving bank created",Toast.LENGTH_LONG).show();
-        ammountOfMoney.setText("");
-        Intent intentAmm = new Intent(this, PersonalPage.class);
-        startActivity(intentAmm);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -82,44 +79,15 @@ public class CreateSeavingAccounts extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_history) {
-
-
-            Intent intentPay = new Intent(this, PaymentHistory.class);
+        if (id == R.id.nav_home) {
+            Intent intentPay = new Intent(this, ManagerPage.class);
             startActivity(intentPay);
-
-        } else if (id == R.id.nav_service_pay) {
-
-            Intent intentService = new Intent(this, ServicePayments.class);
-            startActivity(intentService);
-
-        } else if (id == R.id.nav_create_saving_account) {
-
-
-          //  Intent intentSaving = new Intent(this, CreateSeavingAccounts.class);
-          //  startActivity(intentSaving);
-
-        }  else if (id == R.id.nav_home) {
-
-
-            Intent intentHome = new Intent(this, PersonalPage.class);
-            startActivity(intentHome);
-        }else if(id == R.id.nav_transfer){
-
-            Intent intentTrans = new Intent(this, TransfertPage.class);
-            startActivity(intentTrans);
-
-        }else if(id == R.id.nav_add_money){
-
-            Intent intentAdd = new Intent(this, AddMoneySavingAccount.class);
-            startActivity(intentAdd);
-
-        }else if(id == R.id.nav_withdraw_money){
-
-            Intent intentWith = new Intent(this, WithdrawMoneySavingAccount.class);
-            startActivity(intentWith);
-
-
+        } else if (id == R.id.nav_client_list) {
+            Intent intentClientList = new Intent(this,ManagerClientList.class);
+            startActivity(intentClientList);
+        } else if (id == R.id.nav_employee_list) {
+            Intent intentEmployeeList = new Intent(this,ManagerEmployeeList.class);
+            startActivity(intentEmployeeList);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
