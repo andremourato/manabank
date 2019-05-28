@@ -181,17 +181,14 @@ public class ManagerCompaniesList extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            Intent intentPay = new Intent(this, ManagerPage.class);
+            startActivity(intentPay);
+        } else if (id == R.id.nav_client_list) {
+            Intent intentClientList = new Intent(this,ManagerClientList.class);
+            startActivity(intentClientList);
+        } else if (id == R.id.nav_employee_list) {
+            Intent intentEmployeeList = new Intent(this,ManagerEmployeePage.class);
+            startActivity(intentEmployeeList);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
